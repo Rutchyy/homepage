@@ -10,34 +10,85 @@ body {
 }
 
 header {
+    max-width: 820px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-areas: "img img rig rig" "img img rig rig" " img img rig rig" "rig rig rig rig";
-    width: 80%;
-    height: auto;
-}
-
-.ocean {
-    grid-area: img;
-}
-
-.right {
-    grid-area: rig;
-}
-
-.ocean, .right {
-    margin: 48px;
-}
-
-.right figure {
-    background: white;
-    margin: 0px 0px;
-    padding: 16px 48px;
+    grid-template: repeat(5, 1fr) / repeat(5, 1fr);
 }
 
 h1 {
     color: white;
     text-shadow: 3px 3px 3px rgb(13, 13, 13);
     font-size: 3rem;
+}
+
+.ocean {
+    background-image: url(assets/ocean.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    grid-area: 1 / 1 / 4 / 4;
+}
+
+.right {
+    grid-area: 2 / 3 / 6 / 6;
+}
+
+.right figure {
+    background: white;
+    padding: 16px;
+    margin: 0;
+    box-shadow: 3px 3px 3px rgb(13, 13, 13);
+}
+
+.media {
+    display: none;
+    position: absolute;
+    font-size: 48px;
+    margin-top: 20px;
+}
+
+.top, main, h2 {
+    padding: 0px 32px;
+}
+
+.info img {
+    width: 16px;
+}
+
+main {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+section {
+    box-shadow: 3px 3px 3px rgb(13, 13, 13);
+}
+
+section h3 {
+    height: 128px;
+    text-align: center;
+    padding-top: 40px;
+    background: #61c0d8;
+    font-size: 2.5rem;
+    color: white;
+    margin: 0;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer {
+    background: #0891b2;
+    padding: 16px 0;
+    margin-top: 32px;
+}
+
+footer p, footer h4 {
+    padding: 0px 32px;
 }
